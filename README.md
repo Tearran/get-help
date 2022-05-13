@@ -13,10 +13,22 @@ self-help is a bash script example of 'get ops flags -h ' and 'source && exicuti
 Useage: /home/beta/.local/src/self-help/lib -h
 Options:
         -l      List functions
-        -d      Demo, Retro art
         -h      Print this help.
         -v      Print version info.
 beta@lkars:~/.local/src/self-help $
 ```
-example of cli escape sequence 
+```bash
+
+Useage: self-help && <funtion name>
+Options:
+        set_funName_01  This is description set_funName_01
+        get_funName_01  This is description get_funName_01
+        see_funName_01  This is description see_funName_01
+        run_funName_01  This is description run_funName_01
+        set_funName_02  This is description set_funName_02
+        get_funName_02  This is description get_funName_02
+        see_funName_02  This is description see_funName_02
+        run_funName_02  This is description run_funName_02
+
+```
 
