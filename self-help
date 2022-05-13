@@ -83,7 +83,7 @@ if [[ $# -eq 1 ]] ; then
 while getopts ":hldv" opt; do
     case $opt in
       h) help break ;;
-      l) lst_fun break ;;
+      l) see_lst_fun break ;;
       v) help break ;;
       d) demo_01 ;;
       ?) help break ;;
