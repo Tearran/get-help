@@ -26,7 +26,6 @@ help()
   echo -e "Useage: $SRC -h"
   echo -e "Options:"
   echo -e "\t-l\tList functions"
-  echo -e "\t-d\tDemo, Retro art"
   echo -e "\t-h\tPrint this help."
   echo -e "\t-v\tPrint version info."
 }
@@ -80,12 +79,10 @@ run_funName_02(){
 }
 
 if [[ $# -eq 1 ]] ; then
-while getopts ":hldv" opt; do
+while getopts ":hl" opt; do
     case $opt in
       h) help break ;;
       l) see_lst_fun break ;;
-      v) help break ;;
-      d) demo_01 ;;
       ?) help break ;;
     esac
   exit
