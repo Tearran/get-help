@@ -6,21 +6,25 @@ self-help is a bash script example of 'get ops flags -h ' and 'source && exicuti
 - getops example
 - example to list functions by placing ##:: in the function
 
+$ `self-help -h`
 ```bash
-< filename > -h
-```
-```bash
-Useage: /home/beta/.local/src/self-help/lib -h
+Useage: self-hel -h
 Options:
         -l      List functions
         -h      Print this help.
-        -v      Print version info.
-beta@lkars:~/.local/src/self-help $
+        -v      TODO Print version info.
 ```
+$ `cp self-help neo-help && chmode +x neo-help`
+$ `new-help -h`
 ```bash
-
-Useage: self-help && <funtion name>
+Useage: new-help -h
 Options:
+        -l      List functions
+        -h      Print this help.
+        -v      TODO Print version info.
+```
+$ `self-help -l`
+```bash
         set_funName_01  This is description set_funName_01
         get_funName_01  This is description get_funName_01
         see_funName_01  This is description see_funName_01
@@ -29,6 +33,6 @@ Options:
         get_funName_02  This is description get_funName_02
         see_funName_02  This is description see_funName_02
         run_funName_02  This is description run_funName_02
-
 ```
+$ `self-help -d`
 
