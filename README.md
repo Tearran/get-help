@@ -26,5 +26,3 @@ $ `self-help -l`
         see_funName_02  This is description see_funName_02
         run_funName_02  This is description run_funName_02
 ```
-$ `self-help -d`
-
