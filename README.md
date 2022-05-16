@@ -8,21 +8,15 @@ self-help is a bash script example of 'get ops flags -h ' and 'source && exicuti
 
 $ `self-help -h`
 ```bash
-Useage: self-hel -h
+
+Usage: self-help [ -h ] [ --help ]
 Options:
-        -l      List functions
+        -w      Run Self-Help CLI-UI
         -h      Print this help.
-        -v      TODO Print version info.
+        -v      Print version info.
+
 ```
 
-$ `self-help -l`
-```bash
-        set_funName_01  This is description set_funName_01
-        get_funName_01  This is description get_funName_01
-        see_funName_01  This is description see_funName_01
-        run_funName_01  This is description run_funName_01
-        set_funName_02  This is description set_funName_02
-        get_funName_02  This is description get_funName_02
-        see_funName_02  This is description see_funName_02
-        run_funName_02  This is description run_funName_02
-```
+$ `self-help -w`
+
+
