@@ -14,15 +14,7 @@ Options:
         -h      Print this help.
         -v      TODO Print version info.
 ```
-$ `cp self-help neo-help && chmode +x neo-help`
-$ `new-help -h`
-```bash
-Useage: new-help -h
-Options:
-        -l      List functions
-        -h      Print this help.
-        -v      TODO Print version info.
-```
+
 $ `self-help -l`
 ```bash
         set_funName_01  This is description set_funName_01
