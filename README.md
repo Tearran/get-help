@@ -19,4 +19,4 @@ Options:
 
 $ `self-help -w`
 
-
+![Alt text](https://github.com/Tearran/self-help/raw/main/self-help.png)
