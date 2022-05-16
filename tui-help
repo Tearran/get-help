@@ -1,0 +1,117 @@
+#!/usr/bin/env bash
+
+SRC="${BASH_SOURCE[0]}"
+
+export NEWT_COLORS='
+root=white,black
+window=white,black
+textbox=green,black
+title=green,black
+listbox=yellow,black
+sellistbox=black,green
+actsellistbox=black,yellow
+border=blue,black
+actbutton=black,green
+'
+
+
+set_funName_01(){
+##Discription##This is description 01
+  printf '01'
+
+}
+set_funName_02(){
+##Discription##This is description 01
+  printf '02'
+
+}
+
+get_funName_01(){
+##Discription##This is description 02
+  printf '03'
+
+}
+get_funName_02(){
+##Discription##This is description 02
+  printf '04'
+
+}
+
+see_funName_01(){
+##Discription##This is description 03
+  printf '05'
+
+}
+see_funName_02(){
+##Discription##This is description 03
+  printf '06'
+
+}
+
+run_funName_01(){
+##Discription##This is description 04
+  printf '07'
+
+}
+run_funName_01(){
+##Discription##This is description 04
+  printf '08'
+
+}
+
+
+
+# if below edit == true ; error #
+
+yesno(){
+
+if ( whiptail --yesno "Yes or No?" $(stty size) )
+    then
+        echo "Yes."
+    else
+        echo "No."
+fi
+}
+
+lst_fun(){
+  mapfile -t fun_array < <( grep -e '^[a-z].*_.*(){' "$SRC"  | sed 's|(){.*||g' )
+  mapfile -t dsc_array < <( grep -e '^##.*##' "$SRC" | sed 's|^##.*##||g;s| |_|g' )
+  mapfile -t dsc_count < <( grep -c '^##.*##' "$SRC" | sed 's|^##.*##||g' ) 
+  end="${dsc_count[0]}"
+  mapfile -t dsc_menu < <( for ((i=00; i<end; i++)) ; do  printf '%s %s ' "$i" "${dsc_array[$i]}" ; done )           
+  discription="${dsc_array[*]}"
+  menu="${dsc_menu[@]}"
+  whiptail --title  $0 --cancel-button Finish --menu --clear "Make your choice" $(stty size) $end $menu 
+ opt=$?
+ echo
+ echo
+}
+
+usage() {                                 # Function: Print a help message.
+  echo " $0 [ -h ] [ --help ]" 1>&2 
+}
+
+help()
+{
+  echo "Usage: $0 [ -h ] [ --help ]"
+  echo -e "Options:"
+  echo -e "\t-l\tList functions"
+  echo -e "\t-r\tRebuild Menu"
+  echo -e "\t-h\tPrint this help."
+  echo -e "\t-v\tPrint version info."
+}
+
+if [[ $# -eq 1 ]] ; then
+while true; do
+    case $1 in
+      -h | --help) help ; break ;;
+      -l) lst_fun break ;;
+      -v) break ;;
+      -d) yesno ;;
+      --) shift; break ;;
+      ?) break ;;
+    esac
+  exit
+done
+
+fi
