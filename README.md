@@ -1,5 +1,5 @@
 # Self Help
-self-help is a bash script example of 'get ops flags -h ' and 'source && exicution'
+self-help is a bash script example of get ops flags and 'source && exicution'
 
 ## Features 
 - Chose any filename
