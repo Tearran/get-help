@@ -1,5 +1,5 @@
 # Self Help
-self-help is a bash script example of get ops flags and 'source && exicution'
+self-help is a bash script example of get ops flags
 
 ## Features 
 - getops example
@@ -16,10 +16,4 @@ Options:
 ```
 
 - Chose any filename try: 
-  - $ `cp ./self-help ./neo-help && neo-help`
-
-
-- example to list functions by placing ##:: in the function
-  - $ `self-help -w`
-
-![Alt text](https://github.com/Tearran/self-help/raw/main/self-help.png)
+  - $ `cp ./self-help ./neo-help && neo-help -h`
