@@ -7,7 +7,51 @@ set_funName_01(){
   printf '"set_funtion_01 )":"This is description set fun 01" '
 
 }
+#!/bin/bash
 
+#Uncomment set -x to debug (see bash output to assist self debug)
+
+#set -x
+
+#File location and name (bash builtin)
+SRC="${BASH_SOURCE[0]}"
+ 
+# The name of the File without the leading path
+filename=$(basename "$SRC")
+
+#Versinfo
+versinfo="0.pre.alpha"
+
+see_version()
+{
+# Prints the version defined by filename and versinfo                                
+  echo " ${filename%.*} version $versinfo "
+}
+
+see_help()
+{
+  echo "Usage: ${filename%.*} [ -h ] [ -v ]"
+  echo -e "Options:"
+  echo -e "\t-h\tPrint this help."
+  echo -e "\t-v\tPrint version info."
+}
+
+if [[ $# -eq 1 ]] ; then
+while getopts ":hv" opt; do
+    case $opt in
+      h) see_help break ;;
+      v) see_version break ;;
+      ?) echo  -e "\033[31;5m?! Say What !?\033[0m" ; see_help break ;;
+    esac
+  exit
+done
+fi
+
+#Comment the following if..fi to source file
+if [[ $# -eq 0 ]] ; then
+  see_help
+fi
+   
 get_funName_01(){
 ##Discription::This is description get_funName_01
   printf '"get_funtion_01 "":"This is description set fun 01'
